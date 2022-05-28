@@ -21,9 +21,7 @@
 
 
 
-# else
-#     echo "nothing to commit"
-# fi
+
 
 
 
@@ -57,5 +55,15 @@ push_commit(){
     return
 }
 
-push_commit
+a=[ git status -s ]
+echo $a
+
+if [ -z "$(git status -s)" ];
+    then
+        echo "non si fa nulla";
+        
+else
+    echo "bisogna fare il push";
+    push_commit
+fi
 
