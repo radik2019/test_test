@@ -1,6 +1,13 @@
 hrlllo
+<<<<<<< HEAD
+sfghdfgh
+=======
 added new line
 added new line
 67
 67
+<<<<<<< HEAD
 67
+=======
+>>>>>>> 89c959622163e1e95116d40d1149361304964204
+>>>>>>> 347955975e24f4e115cd3f75be6603a2d51fe0ec
