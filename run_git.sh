@@ -24,14 +24,16 @@
 
 
 
-rem="$(git log --remotes -1 --format=%ct )"
-loc="$(git log -1 --format=%ct )"  
-
 
 # SE LA DATA DELL'ultimo commit remoto e` piu` grande di quello locale
 
 
 push_commit(){
+
+    rem="$(git log --remotes -1 --format=%ct )"
+    loc="$(git log -1 --format=%ct )"  
+
+    
     if [ $rem -le $loc ];
         then
         echo '---------------------------\n\n\n\n'
