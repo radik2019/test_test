@@ -20,8 +20,7 @@
 
 
 
-
-
+# fffffff
 
 
 
@@ -33,12 +32,10 @@ loc="$(git log -1 --format=%ct )"
 
 
 push_commit(){
-    if [ $rem -ge $loc ];
-    then
-        echo ""
-        echo ""
-        echo ""
-        echo ""
+    if [ $rem -le $loc ];
+        then
+        echo '---------------------------\n\n\n\n'
+
         git status
         git add .
         git status
