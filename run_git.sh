@@ -52,15 +52,20 @@ push_commit(){
     return
 }
 
-a=[ git status -s ]
-echo $a
+check_status(){
 
-if [ -z "$(git status -s)" ];
-    then
-        echo "non si fa nulla";
-        
-else
-    echo "bisogna fare il push";
-    push_commit
-fi
+    a=[ git status -s ]
+    echo $a
 
+    if [ -z "$(git status -s)" ];
+        then
+            echo "non si fa nulla";
+            
+    else
+        echo "bisogna fare il push";
+        push_commit
+    fi
+
+}
+
+push_commit
