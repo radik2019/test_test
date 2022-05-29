@@ -24,29 +24,25 @@ compare_and_commit(){
         then
             if [ -z "$(git status -s)" ];
             then
-                echo "1[ > ] pull commit push"
+                echo "    1[ > ] pull commit push"
                 commit_and_push
             else
-                echo "2[ > ] stash pull commit push"
+                echo "    2[ > ] stash pull commit push"
                 stash_commit
             fi
     elif [ $rem -eq $loc ];
         then
             if [ -z "$(git status -s)" ];
                 then
-                    echo "
-
-
-
-                    3[ = ] ==========>>  PULL !!!!!!!!!!!!!!!!!!!!!!";
+                    echo "    3[ = ] ==========>>  PULL !!!!!!!!!!!!!!!!!!!!!!";
                     return
 
             else
-                echo "4[ = ] commit_and_push"
+                echo "    4[ = ] commit_and_push"
                 stash_commit
             fi
     else
-        echo "5[ < ] push";
+        echo "    5[ < ] push";
         commit_and_push
     fi
     return
