@@ -24,6 +24,10 @@ sdfg
 >>>>>>> Stashed changes
 67
 67
+<<<<<<< Updated upstream
 =======
 23
+>>>>>>> Stashed changes
+=======
+67
 >>>>>>> Stashed changes
