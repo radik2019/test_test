@@ -1,21 +1,38 @@
 #!/bin/bash
 
 
+# debug=1 #if debug is commented the programm work verbose
+
+
+print(){
+
+    message=$1 #first argument
+    if [ -z $debug ];
+        then
+            return
+    else
+        echo "$message"
+        echo 'sdsfsdfsdf'
+    fi
+}
+
+
+
 commit_and_push(){
-        echo "      cap[ f ] => Inner 'commit_and_push'";
+        print "      cap[ f ] => Inner 'commit_and_push'";
         git add .
         read -p "        Commit comment: " comment
         git commit -q -m "$comment"
         git push -q
-        echo "      cap[ f ] => Pushed";
+        print "      cap[ f ] => Pushed";
 }
 
 stash_commit(){
     git stash -q
-    echo "      sc [ f ] => Stashed";
+    print "      sc [ f ] => Stashed";
     git pull -q
     git stash apply -q
-    echo "      sc [ f ] => Stash applied";
+    print "      sc [ f ] => Stash applied";
     commit_and_push
 }
 
@@ -26,26 +43,26 @@ compare_and_commit(){
         then
             if [ -z "$(git status -s)" ];
             then
-                echo "    1[ > ] => Call commit_and_push"
+                print "    1[ > ] => Call commit_and_push"
                 commit_and_push
             else
-                echo "    2[ > ] => Call stash_commit"
+                print "    2[ > ] => Call stash_commit"
                 stash_commit
             fi
     elif [ $rem -eq $loc ];
         then
             if [ -z "$(git status -s)" ];
                 then
-                    echo "    3[ = ] => Pull ";
+                    print "    3[ = ] => Pull ";
                     git pull -q
                     return
 
             else
-                echo "    4[ = ] => Call stash_commit"
+                print "    4[ = ] => Call stash_commit"
                 stash_commit
             fi
     else
-        echo "    5[ < ] => Call commit_and_push";
+        print "    5[ < ] => Call commit_and_push";
         commit_and_push
     fi
     return
@@ -54,3 +71,8 @@ compare_and_commit(){
 
 
 compare_and_commit
+
+
+
+
+# print  "you got it!!!!"
