@@ -2,20 +2,20 @@
 
 
 commit_and_push(){
-        echo "    cap[ = ] ====>>  Inner 'commit_and_push'";
+        echo "      cap[ f ] ====>>  Inner 'commit_and_push'";
         git add .
         read -p 'Commit comment: ' comment
         git commit -q -m "$comment"
         git push -q
-        echo "    cap[ = ] ====>>  Pushed";
+        echo "      cap[ f ] ====>>  Pushed";
 }
 
 stash_commit(){
     git stash -q
-    echo "    sc [ = ] ====>>  Stashed";
+    echo "      sc [ f ] ====>>  Stashed";
     git pull -q
     git stash apply -q
-    echo "    sc [ = ] ====>>  Stash applied";
+    echo "      sc [ f ] ====>>  Stash applied";
     commit_and_push
 }
 
