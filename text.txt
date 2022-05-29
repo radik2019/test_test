@@ -12,4 +12,8 @@ added new line
 >>>>>>> 89c959622163e1e95116d40d1149361304964204
 >>>>>>> 347955975e24f4e115cd3f75be6603a2d51fe0ec
 dhdh
+<<<<<<< Updated upstream
 67
+=======
+sdfg
+>>>>>>> Stashed changes
