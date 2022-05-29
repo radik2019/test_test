@@ -2,20 +2,20 @@
 
 
 commit_and_push(){
-        echo "      cap[ f ] ====>>  Inner 'commit_and_push'";
+        echo "      cap[ f ] => Inner 'commit_and_push'";
         git add .
         read -p "        Commit comment: " comment
         git commit -q -m "$comment"
         git push -q
-        echo "      cap[ f ] ====>>  Pushed";
+        echo "      cap[ f ] => Pushed";
 }
 
 stash_commit(){
     git stash -q
-    echo "      sc [ f ] ====>>  Stashed";
+    echo "      sc [ f ] => Stashed";
     git pull -q
     git stash apply -q
-    echo "      sc [ f ] ====>>  Stash applied";
+    echo "      sc [ f ] => Stash applied";
     commit_and_push
 }
 
@@ -26,26 +26,26 @@ compare_and_commit(){
         then
             if [ -z "$(git status -s)" ];
             then
-                echo "    1[ > ] pull commit push"
+                echo "    1[ > ] => Call commit_and_push"
                 commit_and_push
             else
-                echo "    2[ > ] stash pull commit push"
+                echo "    2[ > ] => Call stash_commit"
                 stash_commit
             fi
     elif [ $rem -eq $loc ];
         then
             if [ -z "$(git status -s)" ];
                 then
-                    echo "    3[ = ] ====>>  PULL ";
+                    echo "    3[ = ] => Pull ";
                     git pull -q
                     return
 
             else
-                echo "    4[ = ] commit_and_push"
+                echo "    4[ = ] => Call stash_commit"
                 stash_commit
             fi
     else
-        echo "    5[ < ] push";
+        echo "    5[ < ] => Call commit_and_push";
         commit_and_push
     fi
     return
