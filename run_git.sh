@@ -2,18 +2,20 @@
 
 
 commit_and_push(){
-        git status
+        echo "    3[ = ] ====>>  Inner 'commit_and_push'";
         git add .
-        git status
         read -p 'Commit comment: ' comment
         git commit -m "$comment"
         git push
+        echo "    3[ = ] ====>>  Pushed";
 }
 
 stash_commit(){
     git stash
+    echo "    3[ = ] ====>>  Stashed";
     git pull
     git stash apply
+    echo "    3[ = ] ====>>  Stash applied";
     commit_and_push
 }
 
