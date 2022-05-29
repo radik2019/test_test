@@ -2,20 +2,20 @@
 
 
 commit_and_push(){
-        echo "    3[ = ] ====>>  Inner 'commit_and_push'";
+        echo "    cap[ = ] ====>>  Inner 'commit_and_push'";
         git add .
         read -p 'Commit comment: ' comment
         git commit -q -m "$comment"
         git push -q
-        echo "    3[ = ] ====>>  Pushed";
+        echo "    cap[ = ] ====>>  Pushed";
 }
 
 stash_commit(){
     git stash -q
-    echo "    3[ = ] ====>>  Stashed";
+    echo "    sc [ = ] ====>>  Stashed";
     git pull -q
     git stash apply -q
-    echo "    3[ = ] ====>>  Stash applied";
+    echo "    sc [ = ] ====>>  Stash applied";
     commit_and_push
 }
 
@@ -36,7 +36,8 @@ compare_and_commit(){
         then
             if [ -z "$(git status -s)" ];
                 then
-                    echo "    3[ = ] ==========>>  PULL !!!!!!!!!!!!!!!!!!!!!! ";
+                    echo "    3[ = ] ====>>  PULL ";
+                    git pull -q
                     return
 
             else
