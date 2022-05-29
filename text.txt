@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 hrlllo
 <<<<<<< HEAD
 sfghdfgh
@@ -23,3 +24,6 @@ sdfg
 >>>>>>> Stashed changes
 67
 67
+=======
+23
+>>>>>>> Stashed changes
