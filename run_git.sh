@@ -4,7 +4,7 @@
 commit_and_push(){
         echo "      cap[ f ] ====>>  Inner 'commit_and_push'";
         git add .
-        read -p 'Commit comment: ' comment
+        read -p "        Commit comment: " comment
         git commit -q -m "$comment"
         git push -q
         echo "      cap[ f ] ====>>  Pushed";
