@@ -14,6 +14,10 @@ added new line
 dhdh
 <<<<<<< Updated upstream
 67
+<<<<<<< Updated upstream
 =======
 sdfg
+>>>>>>> Stashed changes
+=======
+67
 >>>>>>> Stashed changes
