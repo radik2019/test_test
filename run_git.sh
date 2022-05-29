@@ -34,7 +34,11 @@ compare_and_commit(){
         then
             if [ -z "$(git status -s)" ];
                 then
-                    echo "3[ = ] ==========>>  PULL !!!!!!!!!!!!!!!!!!!!!!";
+                    echo "
+
+
+
+                    3[ = ] ==========>>  PULL !!!!!!!!!!!!!!!!!!!!!!";
                     return
 
             else
