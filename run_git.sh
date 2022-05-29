@@ -10,6 +10,13 @@ commit_and_push(){
         git push
 }
 
+stash_commit(){
+    git stash
+    git pull
+    git stash apply
+    commit_and_push
+}
+
 compare_and_commit(){
     rem="$(git log --remotes -1 --format=%ct )"
     loc="$(git log -1 --format=%ct )"
@@ -35,6 +42,9 @@ compare_and_commit(){
 
             else
                 echo "4[ = ] commit_and_push"
+                git stash
+                git pull
+                git stash apply
                 commit_and_push
             fi
     else
