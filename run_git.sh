@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# debug=1 #if debug is commented the programm work verbose
+debug=1 #if debug is commented the programm work verbose
 
 
 print(){
@@ -12,10 +12,8 @@ print(){
             return
     else
         echo "$message"
-        echo 'sdsfsdfsdf'
     fi
 }
-
 
 
 commit_and_push(){
