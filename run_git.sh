@@ -5,7 +5,7 @@ commit_and_push(){
         echo "    3[ = ] ====>>  Inner 'commit_and_push'";
         git add .
         read -p 'Commit comment: ' comment
-        git commit -m "$comment"
+        git commit -q -m "$comment"
         git push -q
         echo "    3[ = ] ====>>  Pushed";
 }
