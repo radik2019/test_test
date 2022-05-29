@@ -6,15 +6,15 @@ commit_and_push(){
         git add .
         read -p 'Commit comment: ' comment
         git commit -m "$comment"
-        git push
+        git push -q
         echo "    3[ = ] ====>>  Pushed";
 }
 
 stash_commit(){
-    git stash
+    git stash -q
     echo "    3[ = ] ====>>  Stashed";
-    git pull
-    git stash apply
+    git pull -q
+    git stash apply -q
     echo "    3[ = ] ====>>  Stash applied";
     commit_and_push
 }
@@ -50,17 +50,6 @@ compare_and_commit(){
     return
 }
 
-check_status(){
-    a=[ git status -s ]
-    echo $a
-    if [ -z "$(git status -s)" ];
-        then
-            echo "non si fa nulla";
-    else
-        echo "bisogna fare il push";
-        compare_and_commit
-    fi
 
-}
 
 compare_and_commit
