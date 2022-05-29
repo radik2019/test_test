@@ -28,24 +28,18 @@ compare_and_commit(){
                 commit_and_push
             else
                 echo "2[ > ] stash pull commit push"
-                git stash
-                git pull
-                git stash apply
-                commit_and_push
+                stash_commit
             fi
     elif [ $rem -eq $loc ];
         then
             if [ -z "$(git status -s)" ];
                 then
-                    echo "3[ = ] non si fa nulla";
+                    echo "3[ = ] ==========>>  PULL !!!!!!!!!!!!!!!!!!!!!!";
                     return
 
             else
                 echo "4[ = ] commit_and_push"
-                git stash
-                git pull
-                git stash apply
-                commit_and_push
+                stash_commit
             fi
     else
         echo "5[ < ] push";
